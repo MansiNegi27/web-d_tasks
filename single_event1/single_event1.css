@@ -1,0 +1,182 @@
+.content{
+	background-color: white;
+	border-radius: 20%;
+	color:#662D8C;
+	margin:4%;
+	padding:4%;
+	font-size: 2vmin;
+	font-family:ubuntu;
+}
+.name{
+	color:white;
+	font-size:2.8vmin;
+	font-family: 'Amatic SC', cursive;
+	font-weight: bold;
+}
+.img{
+	height:90%;
+	width:95%;
+	border-style:solid;
+	border-color:white;
+	border-radius: 5%;
+}
+#cube{
+	transform-style: preserve-3d;
+	position: relative;
+	width: 16vmax;
+	
+}
+.cube div{
+	position: absolute;
+	width:16vmax;
+	height:16vmax;
+	border-style: solid;
+	border-color: black;
+ 	background : linear-gradient(#662D8C,#ED1E79,#ffdd42,#ffdd42);
+}
+/*Styles for making the initial cube*/
+.back {
+	transform: translateZ(-8vmax) rotateY(180deg);
+}
+.right {
+	transform: rotateY(-270deg) translateX(8vmax);
+	transform-origin: top right;
+}
+.left {
+	transform: rotateY(270deg) translateX(-8vmax);
+	transform-origin: center left;
+}
+.top {
+	transform: rotateX(+90deg) translateY(-8vmax);
+	transform-origin: top center;
+}
+.bottom {
+	transform: rotateX(-90deg) translateY(8vmax);
+	transform-origin: bottom center;
+}
+.front {
+	transform: translateZ(8vmax);
+}
+/* rotation of cube about its axis*/
+@keyframes spin{
+	0% {
+		transform:rotate3d(0);
+	}
+	10%{
+		transform: rotate3d(0, 1, 0, 90deg);
+	}
+	20%{
+		transform: rotate3d(0, 1, 0, 180deg);
+	}
+	30%{
+		transform: rotate3d(0, 1, 0, 270deg);
+	}
+	40%{
+		transform: rotate3d(0, 1, 0, 360deg);
+	}
+	50%{
+		transform: rotate3d(1, 0, 0, 90deg);
+	}
+	70%{
+		transform: rotate3d(0, 1, 0, 360deg);
+	}
+	85%{
+		transform: rotate3d(1, 0, 0, 270deg);
+	}
+	100% {
+		transform: rotate3d(0, 1, 0, 360deg);
+	}
+}
+/*add this class to spin the cube*/
+.cube_rotate{
+	animation: spin 8s 1;
+}
+/*Now the for the opening of cube into a map kind of thing*/
+@keyframes split_left{
+	0%{
+		transform: rotateY(270deg) translateX(-8vmax);
+	}
+	100%{
+		transform: translateX(-16vmax) rotateY(0deg);
+    	transform-origin: center ;
+    	border-color: white;
+    	border-radius: 10%;
+	}
+}
+.left_split{
+	animation: split_left 3s 1;
+	animation-fill-mode: forwards;
+}
+@keyframes split_right{
+	0%{
+		transform: rotateY(-270deg) translateX(8vmax);
+
+	}
+	100%{
+		transform: translateX(16vmax) rotateY(360deg);
+    	transform-origin: center;
+    	border-color: white;
+    	border-radius: 10%;
+	}
+}
+.right_split{
+	animation: split_right 3s 1;
+	animation-fill-mode: forwards;
+}
+@keyframes split_back{
+	0%{
+		transform: translateZ(-8vmax) rotateY(180deg);
+	}
+	50%{
+		 transform: translateZ(-16vmax) rotateY(-360deg);
+   		 transform-origin: center;
+	}
+	100%{
+ 		transform:translateZ(0vmax) translateX(32vmax);
+    	border-color: white;
+    	border-radius: 10%;
+	}
+}
+.back_split{
+	animation: split_back 3s 1;
+	animation-fill-mode: forwards;
+}
+@keyframes split_top{
+	0%{
+		transform: rotateX(+90deg) translateY(-8vmax);
+	}
+	100%{
+    	transform: rotateX(0deg) translateY(-16vmax);
+    	transform-origin: center;
+		border-color: white;
+    	border-radius: 10%;	
+    }
+}
+.top_split{
+	animation: split_top 3s 1;
+	animation-fill-mode: forwards;
+}
+@keyframes split_bottom{
+	0%{
+		transform: rotateX(-90deg) translateY(8vmax);		
+	}
+	100%{
+    	transform: rotateX(0deg) translateY(16vmax);
+    	transform-origin: center;
+     	border-color: white;
+    	border-radius: 10%;
+	}
+}
+.bottom_split{
+	animation: split_bottom 3s 1;
+	animation-fill-mode: forwards;
+}
+.front_split{
+	    border-color: white  !important; 
+    	border-radius: 10% ;
+}
+
+#cube:hover{
+	animation-play-state: paused;
+
+}

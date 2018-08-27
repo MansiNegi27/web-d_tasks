@@ -1,0 +1,37 @@
+
+var my_cube = document.getElementById("cube");
+my_cube.addEventListener("animationend",listener,false);
+function listener(){
+	my_cube.classList.remove("cube_rotate");
+	var my_cube_faces = my_cube.getElementsByTagName("div");
+	var len = my_cube_faces.length;
+	for(var i=0;i<len;i++){
+		var intial_class_list = my_cube_faces[i].classList;
+		my_cube_faces[i].classList.add(intial_class_list[0]+"_split");
+	}
+}
+var cube_faces = my_cube.getElementsByTagName("div");
+//Keep in mind that cube_faces[0] refers to div with class as front.
+//Also front has no animations, so there would be no event listener for that
+
+cube_faces[1].addEventListener("animationend",listener_back,false);
+cube_faces[2].addEventListener("animationend",listener_top,false);
+cube_faces[3].addEventListener("animationend",listener_bottom,false);
+cube_faces[4].addEventListener("animationend",listener_left,false);
+cube_faces[5].addEventListener("animationend",listener_right,false);
+function listener_back(){
+	cube_faces[1].classList.add(listener_back);
+}
+function listener_top(){
+	cube_faces[2].classList.add(listener_top);
+}
+function listener_bottom(){
+	cube_faces[3].classList.add(listener_bottom);
+}
+function listener_left(){
+	cube_faces[4].classList.add(listener_left);
+}
+function listener_right(){
+	cube_faces[5].classList.add(listener_right);
+}
+

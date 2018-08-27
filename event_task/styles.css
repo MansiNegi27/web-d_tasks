@@ -1,0 +1,154 @@
+body{
+	background-image: url("background.jpg");
+}
+#technical_tab{
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+ 	font:black;
+ 	font-weight: bold;
+	text-align: center;
+	vertical-align: center;
+	padding: 3%;
+	width:70%;
+	margin-top: 40%;
+	font-size:125%;
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 10%;
+	border-color:black;
+	animation: Gradient 5s ease infinite ;
+	-webkit-animation: Gradient 5s ease infinite;
+	-moz-animation: Gradient 5s ease infinite;
+	height: 60%;
+}
+#informal_tab{
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+ 	font:black;
+	text-align: center;
+	vertical-align: center;
+	padding: 3%;
+	width:70%;
+	font-weight: bold;
+	height: 60%;
+
+	margin-top: 40%;
+	font-size:125%;
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 10%;
+	border-color: black;
+ 	animation: Gradient 5s ease infinite ;
+	-webkit-animation: Gradient 5s ease infinite ;
+	-moz-animation: Gradient 5s ease infinite ;
+}
+hr{
+	border-width: 3px;
+	border-color: black;
+}
+.fa{
+ color:black;
+
+}
+.fa:hover{
+	-webkit-animation: rotation 4s infinite linear;
+	-webkit-transform: scale(1.5);
+	color:white;
+	
+}
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(360deg);
+		}
+}
+#technical_tab:hover{
+	animation: shake 0.5s ;
+	animation-iteration-count: infinite;
+}
+#informal_tab:hover{
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+}
+@keyframes shake{
+	 10%, 90% {
+    transform: translate3d(-1px, 2px, 0);
+  }
+  20%, 90% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 40%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+hr:hover{
+  border-color:white;
+}
+#technical_tab:hover{
+	color:white; 
+	border-color:white;
+	transform: scale(1);
+}
+#informal_tab:hover{
+	color:white;
+	border-color:white;
+	transform: scale(1);
+}
+@keyframes Gradient {
+	0%{
+	background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+.fa.fa-home{
+	color:white;
+}
+.fa.fa-home:hover{
+	color:black;
+}
+.home_icon{
+	color:white;
+	background-color: black;
+	box-shadow: none;
+	flood-color: white;
+	margin-top: 5%;
+	align-self: left;
+}
+.home_icon:hover{
+	background-color: white;
+	color:black;
+	border-color:currentColor;
+}
